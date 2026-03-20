@@ -1,0 +1,18 @@
+# 1. Entrar na pasta com o tf-04.js
+cd /caminho/para/meu-projeto/TF-04node.js
+
+# 2. Inicializar Git
+git init
+
+# 3. Adicionar o arquivo
+git add tf-04.js
+
+# 4. Primeiro commit
+git commit -m "Aula 04 - funções em JavaScript"
+
+# 5. Adicionar o repositório remoto (use o link HTTPS do seu repo)
+git remote add origin https://github.com/seu-usuario/TF-04node.js.git
+
+# 6. Enviar ao GitHub
+git branch -M main
+git push -u origin main
