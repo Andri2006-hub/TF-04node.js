@@ -1,0 +1,61 @@
+// 1. Uso básico de funções
+function saudar(nome) {
+  return `Olá, ${nome}!`;
+}
+
+console.log("=== 1. Uso básico de funções ===");
+console.log(saudar("Ana"));
+console.log(saudar("Carlos"));
+
+
+// 2. Função como valor em constante
+const somar = function(a, b) {
+  return a + b;
+};
+
+console.log("\n=== 2. Função como valor em constante ===");
+console.log("somar(3, 5):", somar(3, 5));
+console.log("somar(10, -2):", somar(10, -2));
+
+
+// 3. Uso de função em objeto como método
+const calculadora = {
+  nome: "Mini Calculadora",
+  somar: function(a, b) {
+    return a + b;
+  },
+  multiplicar: (a, b) => a * b
+};
+
+console.log("\n=== 3. Função em objeto como método ===");
+console.log("calculadora.somar(7, 8):", calculadora.somar(7, 8));
+console.log("calculadora.multiplicar(4, 6):", calculadora.multiplicar(4, 6));
+console.log("Nome da calculadora:", calculadora.nome);
+
+
+// 4. Exemplo de callback
+function processarLista(lista, funcaoCallback) {
+  const resultado = [];
+  for (const item of lista) {
+    resultado.push(funcaoCallback(item));
+  }
+  return resultado;
+}
+
+const numeros = [1, 2, 3, 4, 5];
+
+console.log("\n=== 4. Exemplo de callback ===");
+const aoQuadrado = (x) => x * x;
+const triplo = (x) => x * 3;
+
+console.log("Números originais:", numeros);
+console.log("Ao quadrado:", processarLista(numeros, aoQuadrado));
+console.log("Triplo:", processarLista(numeros, triplo));
+
+
+// Extra: callback simples com função anônima
+console.log("\n=== 4b. Callback com função anônima ===");
+const positivos = processarLista(numeros, function(x) {
+  return x > 0 ? "positivo" : "não positivo";
+});
+console.log("Classificação:", positivos);
